@@ -45,4 +45,6 @@ python data_convertion.py --file='/home/jovyan/proj-liujing/ramdon/testset.csv'
 ```
 python smi_to_pyg.py --input='/home/jovyan/proj-liujing/ramdon/random_smiles.csv'
 ```
-用于测试的dataset为 `test_matrix.csv `
+用于测试的dataset为 `test_matrix.csv ` 
+
+用`--input=`和`--output=`来指定输入输出文件，默认output file为 `graph_data.pt`
