@@ -6,9 +6,17 @@ python data_exraction.py --dp_path=
 ```
 默认在当前目录下生成 `pIC50_ChEMBL.csv` 文件
 
+## data_conversion.py
+```{bash}
+python data_convertion.py --file='/home/jovyan/proj-liujing/ramdon/testset.csv'
+```
+需要用 `--file=` 指定所需要转换为matrix的文件。 用于测试的文件名为`test_extracted_chembl.csv`
+
+默认生成文件名为`chembl_matrix.csv` 文件名不会被覆盖，以及该文件所对应的 `target dictionary`
+
 
 ## data_split.py
-用于分割train, val and test set. 
+将预处理好的matrix 分割train, val and test set. 
 ```{bash}
     python dataset_split.py --input_file='/home/jovyan/proj-liujing/ramdon/random_smiles.csv'  --test_file='t1.csv' --train_file='t2.csv'
     python dataset_split.py --input_file='/home/jovyan/proj-liujing/ramdon/random_smiles.csv'
@@ -19,13 +27,7 @@ python data_exraction.py --dp_path=
 
 用于测试的文件名为`test_matrix.csv` or `test_extracted_chembl.csv`
 
-## data_conversion.py
-```{bash}
-python data_convertion.py --file='/home/jovyan/proj-liujing/ramdon/testset.csv'
-```
-需要用 `--file=` 指定所需要转换为matrix的文件。 用于测试的文件名为`test_extracted_chembl.csv`
 
-默认生成文件名为`chembl_matrix.csv` 文件名不会被覆盖，以及该文件所对应的 `target dictionary`
 
 
 ## smi_to_pyg.py
