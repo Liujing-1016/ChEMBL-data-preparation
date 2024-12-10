@@ -7,8 +7,8 @@
 
 ## Data split
 用于分割train, val and test set. 
-`python dataset_split.py --input_file='/home/jovyan/proj-liujing/ramdon/random_smiles.csv'  --test_file='t1.csv' --train_file='t2.csv'`
-`python dataset_split.py --input_file='/home/jovyan/proj-liujing/ramdon/random_smiles.csv' `
+    python dataset_split.py --input_file='/home/jovyan/proj-liujing/ramdon/random_smiles.csv'  --test_file='t1.csv' --train_file='t2.csv'
+    python dataset_split.py --input_file='/home/jovyan/proj-liujing/ramdon/random_smiles.csv' 
 还可以添加 `--test_size=` 和 `random_state=` 默认分别为0.2和42
 如果不指定生成的`test_file` 和`train_file` 文件命名， 文件名会覆盖
 用于测试的文件名为`test_matrix.csv` or `test_extracted_chembl.csv`
