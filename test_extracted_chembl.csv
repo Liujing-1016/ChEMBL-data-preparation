@@ -1,0 +1,7 @@
+canonical_smiles,pref_name,pIC50,IC50
+Nc1ccc(S(N)(=O)=O)cc1I,target2,5.2,1
+O=C1O/C(=C/Br)CCC1c1cccc2ccccc12,target1,4.5,2
+O=C1O/C(=C/Br)CCC1c1cccc2ccccc13,target3,2.3,0
+c1ccc(-c2nc3c(-c4nc5ccccc5o4)cccc3o2)cc2,target1,2.6,5
+c1ccc(-c2nc3c(-c4nc5ccccc5o4)cccc3o2)cc3,target3,4.7,1
+c1ccc(-c2nc3c(-c4nc5ccccc5o4)cccc3o2)cc4,target4,3.7,1
