@@ -54,6 +54,7 @@ def smi_to_pyg(smi, y=None):
         edge_index.append([i, j])
         edge_index.append([j, i])
         edge_attr.append([bond_type, is_conjugated])
+        edge_attr.append([bond_type, is_conjugated])
     
     edge_index = torch.tensor(edge_index, dtype=torch.long).t().contiguous()
     edge_attr = torch.tensor(edge_attr, dtype=torch.float)
