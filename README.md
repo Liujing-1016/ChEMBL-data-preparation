@@ -30,7 +30,8 @@ python data_convertion.py --file='/home/jovyan/proj-liujing/ramdon/testset.csv'
 
 
 
-## smi_to_pyg.py
+## smi_to_pyg_00.py
+00版本，没有用one-hot进行编码。node_dim, edge_dim  = (5,2)
 将含有smiles的matrix dataset转换为可供PyTorch识别的 `Data` 类型
 把node, edge等信息保存
 - node: 
@@ -48,3 +49,10 @@ python smi_to_pyg.py --input='/home/jovyan/proj-liujing/ramdon/random_smiles.csv
 用于测试的dataset为 `test_matrix.csv ` 
 
 用`--input=`和`--output=`来指定输入输出文件，默认output file为 `graph_data.pt`
+
+## smi_to_pyg_02.py
+02 版本 用one-hot进行编码。node_dim, edge_dim  = (39,9)
+
+## ECPF_conv.py
+python ECPF_copy.py --input train_chunk_1.csv --output train_ecfp_chunk_1.csv
+
