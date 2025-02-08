@@ -56,10 +56,57 @@ Use `--input=` and `--output=` to specify input and output files. The default ou
 ## smi_to_pyg_02.py
 Version 02 uses one-hot encoding. Node and edge dimensions are `(39,9)`.
 
+This script converts a dataset containing SMILES strings into PyTorch Geometric `Data` format while encoding atomic and bond properties using one-hot encoding.
+
+### Features:
+- **Node features:**
+  - Atomic number (one-hot encoded for common elements)
+  - Degree (one-hot for [0-5])
+  - Formal charge
+  - Radical electrons count
+  - Hybridization state (one-hot)
+  - Aromaticity
+  - Hydrogen count (one-hot for [0-4])
+  - Chirality (one-hot encoded for R/S)
+- **Edge features:**
+  - Bond type (single, double, triple, aromatic, one-hot)
+  - Conjugation status (one-hot)
+  - Ring status (one-hot)
+  - Stereo configuration (one-hot for STEREONONE, STEREOZ, STEREOE)
+
+```bash
+python smi_to_pyg_02.py --input='/home/jovyan/proj-liujing/random/random_smiles.csv' --output='graph_data_02.pt'
+```
+
+Use `--input=` and `--output=` to specify the input and output files. The default output file is `graph_data_02.pt`.
+
 ## ECPF_conv.py
 ```bash
 python ECPF_copy.py --input train_chunk_1.csv --output train_ecfp_chunk_1.csv
 ```
 This script converts molecular data into Extended-Connectivity Fingerprints (ECFP) format.
+
+## MyDataset Class
+This custom dataset class is designed to handle SMILES-based molecular data and convert them into PyTorch Geometric `Data` format.
+
+### Initialization:
+- Reads SMILES and corresponding task values.
+- Converts molecules using `smi_to_pyg`.
+- Stores PyTorch Geometric `Data` objects.
+
+### Methods:
+- `__getitem__(idx)`: Returns the `Data` object at index `idx`.
+- `__len__()`: Returns the total number of samples.
+- `__head__(n=5)`: Returns the first `n` samples for previewing.
+
+### Example Usage:
+```python
+from torch.utils.data import DataLoader
+
+dataset = MyDataset(smiles_list, task_df)
+dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+```
+
+
 
 
